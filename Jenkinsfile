@@ -56,13 +56,13 @@ pipeline {
         success {
           mail body: 'The security scan stage completed successfully.',
             subject: 'Security Scan Success',
-            to: 'bpillwein23@gmail.com',
+            to: 'bpillwein23@gmail.com'
             // attachLog: true
         }
         failure {
           mail body: 'The security scan stage failed.',
             subject: 'Security Scan Failed',
-            to: 'bpillwein23@gmail.com',
+            to: 'bpillwein23@gmail.com'
             // attachLog: true
         }
       }
