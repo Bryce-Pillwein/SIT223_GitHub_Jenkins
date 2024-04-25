@@ -30,13 +30,14 @@ pipeline {
         success {
           emailext subject: 'Build Success Notification',
             body: 'The build was successful.',
-            to: 'bpillwein23@gmail.com',
+            to: 'princecharmingsfool@gmail.com',
             attachLog: true
         }
         failure {
-          mail subject: 'Build Failure Notification',
-                    body: 'The build failed.',
-                    to: 'bpillwein23@gmail.com'
+          emailext subject: 'Build Failed Notification',
+            body: 'The build was successful.',
+            to: 'princecharmingsfool@gmail.com',
+            attachLog: true
         }
       }
     }
@@ -55,16 +56,16 @@ pipeline {
       }
       post {
         success {
-          mail body: 'The security scan stage completed successfully.',
-            subject: 'Security Scan Success',
-            to: 'bpillwein23@gmail.com'
-            // attachLog: true
+          emailext subject: 'Security Scan Failed Notification',
+            body: 'The build was successful.',
+            to: 'princecharmingsfool@gmail.com',
+            attachLog: true
         }
         failure {
-          mail body: 'The security scan stage failed.',
-            subject: 'Security Scan Failed',
-            to: 'bpillwein23@gmail.com'
-            // attachLog: true
+          emailext subject: 'Security Scan Failed Notification',
+            body: 'The build was successful.',
+            to: 'princecharmingsfool@gmail.com',
+            attachLog: true
         }
       }
     }
