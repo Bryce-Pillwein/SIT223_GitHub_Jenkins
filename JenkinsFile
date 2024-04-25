@@ -21,9 +21,21 @@ pipeline {
 
     stage('Test') {
       steps {
-        echo 'Running unit tests.'
-        echo 'Running integration tests.'
-        echo 'Tools like JUnit for unit tests and Selenium for integration tests can be used'
+        // Your test steps
+      }
+      post {
+        success {
+          emailext subject: 'Test Stage Success',
+                    body: 'The test stage completed successfully.',
+                    to: 'bpillwein23@gmail.com',
+                    attachLog: true
+        }
+        failure {
+          emailext subject: 'Test Stage Failed',
+                    body: 'The test stage failed.',
+                    to: 'bpillwein23@gmail.com',
+                    attachLog: true
+        }
       }
     }
 
@@ -36,8 +48,21 @@ pipeline {
 
     stage('Security Scan') {
       steps {
-        echo 'Performing security scan on the code.'
-        echo 'OWASP ZAP can be used for security scanning'
+        // Your security scan steps
+      }
+      post {
+        success {
+          emailext subject: 'Security Scan Success',
+                    body: 'The security scan stage completed successfully.',
+                    to: 'bpillwein23@gmail.com',
+                    attachLog: true
+        }
+        failure {
+          emailext subject: 'Security Scan Failed',
+                    body: 'The security scan stage failed.',
+                    to: 'bpillwein23@gmail.com',
+                    attachLog: true
+        }
       }
     }
 
