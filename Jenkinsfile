@@ -30,7 +30,8 @@ pipeline {
         success {
           emailext subject: 'Build Success Notification',
             body: 'The build was successful.',
-            to: 'bpillwein23@gmail.com'
+            to: 'bpillwein23@gmail.com',
+            attachLog: true
         }
         failure {
           mail subject: 'Build Failure Notification',
