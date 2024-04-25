@@ -28,9 +28,9 @@ pipeline {
       }
       post {
         success {
-          mail subject: 'Build Success Notification',
-                    body: 'The build completed successfully.',
-                    to: 'bpillwein23@gmail.com'
+          emailext subject: 'Build Success Notification',
+            body: 'The build was successful.',
+            to: 'bpillwein23@gmail.com',
         }
         failure {
           mail subject: 'Build Failure Notification',
