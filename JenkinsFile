@@ -21,7 +21,10 @@ pipeline {
 
     stage('Test') {
       steps {
-        // Your test steps
+        echo 'Running unit tests.'
+        echo 'Running integration tests.'
+        echo 'Tools like JUnit for unit tests and Selenium for integration tests can be used'
+      
       }
       post {
         success {
@@ -48,7 +51,8 @@ pipeline {
 
     stage('Security Scan') {
       steps {
-        // Your security scan steps
+        echo 'Performing security scan on the code.'
+        echo 'OWASP ZAP can be used for security scanning'
       }
       post {
         success {
