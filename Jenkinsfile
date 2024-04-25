@@ -31,6 +31,7 @@ pipeline {
           emailext subject: 'Test Stage Success',
                     body: 'The test stage completed successfully.',
                     to: 'bpillwein23@gmail.com',
+                    from: 'princecharmingsfool@gmail.com'
                     attachLog: true
         }
         failure {
@@ -59,6 +60,7 @@ pipeline {
           emailext body: 'The security scan stage completed successfully.',
             subject: 'Security Scan Success',
             to: 'bpillwein23@gmail.com',
+            from: 'princecharmingsfool@gmail.com'
             attachLog: true
         }
         failure {
